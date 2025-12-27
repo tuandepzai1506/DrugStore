@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.quanlykho.controller.KhoThuocController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <top>
+        <VBox spacing="10">
+            <Label text="DANH MỤC THUỐC TRONG KHO" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="txtSearch" promptText="Tìm kiếm thuốc..." prefWidth="300"/>
+                <Button text="Tìm kiếm" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Xuất File Excel" style="-fx-background-color: #f39c12; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableThuoc" style="-fx-margin-top: 15;">
+            <columns>
+                <TableColumn fx:id="colTen" text="Tên thuốc" prefWidth="200"/>
+                <TableColumn fx:id="colSoLuong" text="Số lượng tồn" prefWidth="100"/>
+                <TableColumn fx:id="colGia" text="Giá bán niêm yết" prefWidth="150"/>
+                <TableColumn fx:id="colHSD" text="Hạn sử dụng" prefWidth="150"/>
+                <TableColumn fx:id="colTrangThai" text="Trạng thái" prefWidth="120"/>
+            </columns>
+        </TableView> [cite: 3]
+    </center>
+</BorderPane>

@@ -13,7 +13,7 @@ public class App extends Application {
                 getClass().getResource("/com/quanlykho/fxml/MainView.fxml")
         );
 
-        Scene scene = new Scene(loader.load());
+        Scene scene = new Scene(loader.load(), 900, 600);
         stage.setTitle("Drug Store");
         stage.setScene(scene);
         stage.show();

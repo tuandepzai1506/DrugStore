@@ -1,49 +1,60 @@
 package com.quanlykho.controller;
 
-import com.quanlykho.model.Thuoc;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.StackPane;
+import javafx.scene.Node;
 
 public class MainController {
 
     @FXML
-    private TextField searchField;
+    private StackPane contentPane;
 
-    @FXML
-    private TableView<Thuoc> tableThuoc;
-
-    @FXML
-    private TableColumn<Thuoc, String> colTen;
-
-    @FXML
-    private TableColumn<Thuoc, Integer> colSoLuong;
-
-    @FXML
-    private TableColumn<Thuoc, String> colHanSD;
-
-    private final ObservableList<Thuoc> data = FXCollections.observableArrayList();
-
-    @FXML
-    public void initialize() {
-        colTen.setCellValueFactory(new PropertyValueFactory<>("ten"));
-        colSoLuong.setCellValueFactory(new PropertyValueFactory<>("soLuong"));
-        colHanSD.setCellValueFactory(new PropertyValueFactory<>("hanSuDung"));
-
-        // Dữ liệu mẫu
-        data.add(new Thuoc("Paracetamol", 50, "12/2026"));
-        data.add(new Thuoc("Amoxicillin", 30, "08/2025"));
-
-        tableThuoc.setItems(data);
+    private void loadView(String fxmlFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/com/quanlykho/fxml/" + fxmlFile)
+            );
+            Node view = loader.load();
+            contentPane.getChildren().setAll(view);
+        } catch (Exception e) {
+            System.err.println("❌ Không load được: " + fxmlFile);
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    private void handleSearch() {
-        String keyword = searchField.getText();
-        System.out.println("Tìm kiếm: " + keyword);
+    private void showImportView() {
+        loadView("NhapThuocView.fxml");
+    }
+
+    @FXML
+    private void showExportView() {
+        loadView("BanThuocView.fxml");
+    }
+
+    // Hàm này tương ứng với nút "Tồn kho" trong FXML
+    @FXML
+    private void showInventoryView() {
+        loadView("KhoThuocView.fxml");
+    }
+
+    // Thêm hàm này để hết lỗi showSupplierView
+    @FXML
+    private void showSupplierView() {
+        System.out.println("➡ Mở giao diện Nhà cung cấp (Chưa có FXML)");
+        // loadView("SupplierView.fxml"); // Mở comment khi bạn đã tạo file này
+    }
+
+    // Thêm hàm này để khớp với nút "Nhân viên"
+    @FXML
+    private void showStaffView() {
+        System.out.println("➡ Mở giao diện Nhân viên");
+    }
+
+    // Thêm hàm thoát ứng dụng
+    @FXML
+    private void exitApp() {
+        System.exit(0);
     }
 }
