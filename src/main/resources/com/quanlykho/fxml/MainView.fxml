@@ -1,0 +1,28 @@
+fx:controller="com.quanlykho.controller.MainController"
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quanlykho.controller.MainController">
+   <top>
+      <HBox spacing="10" style="-fx-padding: 10;">
+         <TextField fx:id="searchField" promptText="Nhập tên thuốc..." />
+         <Button onAction="#handleSearch" text="Tìm kiếm" />
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="tableThuoc">
+        <columns>
+          <TableColumn fx:id="colTen" prefWidth="200" text="Tên Thuốc" />
+          <TableColumn fx:id="colSoLuong" prefWidth="100" text="Số Lượng" />
+          <TableColumn fx:id="colHanSD" prefWidth="150" text="Hạn Sử Dụng" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
