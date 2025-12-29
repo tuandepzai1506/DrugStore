@@ -29,6 +29,6 @@
                 <TableColumn fx:id="colHSD" text="Hạn sử dụng" prefWidth="150"/>
                 <TableColumn fx:id="colTrangThai" text="Trạng thái" prefWidth="120"/>
             </columns>
-        </TableView> [cite: 3]
+        </TableView>
     </center>
 </BorderPane>

@@ -1,3 +1,7 @@
+com\quanlykho\controller\BanThuocController.class
+com\quanlykho\controller\BaoCaoController.class
 com\quanlykho\controller\MainController.class
+com\quanlykho\controller\NhapThuocController.class
 com\quanlykho\App.class
+com\quanlykho\controller\KhoThuocController.class
 com\quanlykho\model\Thuoc.class
