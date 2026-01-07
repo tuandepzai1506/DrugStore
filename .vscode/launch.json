@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "TestDatabaseConnection",
+            "request": "launch",
+            "mainClass": "com.quanlykho.TestDatabaseConnection",
+            "projectName": "DrugStore"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.quanlykho.App",
+            "projectName": "DrugStore"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
