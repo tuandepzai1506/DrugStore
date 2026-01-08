@@ -10,11 +10,11 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/com/quanlykho/fxml/LoginView.fxml")
+                getClass().getResource("/com/quanlykho/fxml/MainView.fxml")
         );
 
         Scene scene = new Scene(loader.load(), 900, 600);
-        stage.setTitle("Đăng nhập - Drug Store");
+        stage.setTitle("Hệ thống quản lý kho thuốc");
         stage.setScene(scene);
         stage.show();
     }

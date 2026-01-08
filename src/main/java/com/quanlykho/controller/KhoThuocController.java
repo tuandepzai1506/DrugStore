@@ -59,7 +59,21 @@ public class KhoThuocController implements Initializable {
     private void setupTableColumns() {
         // Binding các cột tiêu chuẩn với property của Thuoc model
         colTen.setCellValueFactory(new PropertyValueFactory<>("name"));
+        
+        // Cột giá: hiển thị với định dạng VND
         colGia.setCellValueFactory(new PropertyValueFactory<>("price"));
+        colGia.setCellFactory(column -> new TableCell<Thuoc, Double>() {
+            @Override
+            protected void updateItem(Double price, boolean empty) {
+                super.updateItem(price, empty);
+                if (empty || price == null) {
+                    setText(null);
+                } else {
+                    setText(String.format("%,.0f VND", price));
+                }
+            }
+        });
+        
         colHSD.setCellValueFactory(new PropertyValueFactory<>("expiryDate"));
 
         // Cột số lượng tồn: lấy từ database (nhập - xuất)
@@ -92,7 +106,7 @@ public class KhoThuocController implements Initializable {
             // Lấy tất cả thuốc từ database
             var medicineList = MedicineDAO.getAllMedicines();
             tableThuoc.setItems(medicineList);
-            System.out.println("✓ Đã tải " + medicineList.size() + " loại thuốc");
+            System.out.println("Đã tải " + medicineList.size() + " loại thuốc");
         } catch (Exception e) {
             showError("Lỗi tải dữ liệu", "Không thể tải danh sách thuốc từ database: " + e.getMessage());
             e.printStackTrace();
@@ -113,7 +127,7 @@ public class KhoThuocController implements Initializable {
             // Kiểm tra hạn sử dụng
             LocalDate hanSD = LocalDate.parse(thuoc.getExpiryDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             if (hanSD.isBefore(LocalDate.now())) {
-                return "❌ Hết hạn";
+                return "Hết hạn";
             }
         } catch (Exception e) {
             System.err.println("Lỗi parse ngày: " + e.getMessage());
@@ -125,11 +139,11 @@ public class KhoThuocController implements Initializable {
         int soLuongTon = soLuongNhap - soLuongXuat;
 
         if (soLuongTon == 0) {
-            return "⚠️ Hết hàng";
+            return "Hết hàng";
         } else if (soLuongTon < 10) {
-            return "⚠️ Sắp hết";
+            return "Sắp hết";
         } else {
-            return "✓ Sẵn sàng";
+            return "Sẵn sàng";
         }
     }
 
