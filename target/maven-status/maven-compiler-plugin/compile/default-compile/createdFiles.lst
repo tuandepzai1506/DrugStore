@@ -1,4 +1,5 @@
 com\quanlykho\database\SupplierDAO$Supplier.class
+com\quanlykho\controller\LoginController.class
 com\quanlykho\controller\BaoCaoController.class
 com\quanlykho\database\MedicineDAO.class
 com\quanlykho\database\StockOutDAO.class

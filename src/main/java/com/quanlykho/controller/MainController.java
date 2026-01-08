@@ -3,7 +3,9 @@ package com.quanlykho.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 
 public class MainController {
 
@@ -66,4 +68,17 @@ public class MainController {
     private void exitApp() {
         System.exit(0);
     }
+    @FXML
+private void handleLogout() {
+    try {
+        Stage stage = (Stage) contentPane.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/com/quanlykho/fxml/LoginView.fxml"));
+        stage.setScene(new Scene(loader.load()));
+        stage.setTitle("Đăng nhập - Drug Store");
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
 }
