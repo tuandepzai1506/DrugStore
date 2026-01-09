@@ -38,6 +38,14 @@
             </items>
         </ComboBox>
         
+        <Label text="Hạn sử dụng:"/>
+        <HBox spacing="5">
+            <Label text="Từ:"/>
+            <DatePicker fx:id="dpHanSuDungFrom" prefWidth="100"/>
+            <Label text="Đến:"/>
+            <DatePicker fx:id="dpHanSuDungTo" prefWidth="100"/>
+        </HBox>
+        
         <Button fx:id="btnTimKiem" text="Tìm kiếm" maxWidth="Infinity" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
         <Button fx:id="btnResetTimKiem" text="Đặt lại" maxWidth="Infinity" style="-fx-background-color: #95a5a6; -fx-text-fill: white;"/>
         

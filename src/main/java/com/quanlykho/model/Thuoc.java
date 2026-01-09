@@ -13,6 +13,7 @@ public class Thuoc {
     private final SimpleStringProperty expiryDate;
     private final SimpleIntegerProperty categoryId;
     private final SimpleStringProperty createdAt;
+    private final SimpleIntegerProperty quantity;
 
     // Constructor mặc định
     public Thuoc() {
@@ -31,6 +32,21 @@ public class Thuoc {
         this.expiryDate = new SimpleStringProperty(expiryDate);
         this.categoryId = new SimpleIntegerProperty(categoryId);
         this.createdAt = new SimpleStringProperty(createdAt);
+        this.quantity = new SimpleIntegerProperty(0);
+    }
+
+    // Constructor cho BanThuocController
+    public Thuoc(String name, int quantity, String expiryDate, double price, String brand) {
+        this.id = new SimpleIntegerProperty(0);
+        this.name = new SimpleStringProperty(name);
+        this.image = new SimpleStringProperty("");
+        this.price = new SimpleDoubleProperty(price);
+        this.brand = new SimpleStringProperty(brand);
+        this.description = new SimpleStringProperty("");
+        this.expiryDate = new SimpleStringProperty(expiryDate);
+        this.categoryId = new SimpleIntegerProperty(0);
+        this.createdAt = new SimpleStringProperty("");
+        this.quantity = new SimpleIntegerProperty(quantity);
     }
 
     // Getters
@@ -70,6 +86,23 @@ public class Thuoc {
         return createdAt.get();
     }
 
+    public int getQuantity() {
+        return quantity.get();
+    }
+
+    // Alias methods for BanThuocController compatibility
+    public String getTen() {
+        return getName();
+    }
+
+    public String getHaCungCap() {
+        return getBrand();
+    }
+
+    public double getGia() {
+        return getPrice();
+    }
+
     // Setters
     public void setId(int id) {
         this.id.set(id);
@@ -107,6 +140,10 @@ public class Thuoc {
         this.createdAt.set(createdAt);
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity.set(quantity);
+    }
+
     // Property accessors (để dùng với TableView)
     public IntegerProperty idProperty() {
         return id;
@@ -142,6 +179,10 @@ public class Thuoc {
 
     public StringProperty createdAtProperty() {
         return createdAt;
+    }
+
+    public IntegerProperty quantityProperty() {
+        return quantity;
     }
 
     @Override

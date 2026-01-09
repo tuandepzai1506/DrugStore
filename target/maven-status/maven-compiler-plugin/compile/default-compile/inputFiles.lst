@@ -4,4 +4,11 @@ F:\New folder\src\main\java\com\quanlykho\controller\BaoCaoController.java
 F:\New folder\src\main\java\com\quanlykho\controller\KhoThuocController.java
 F:\New folder\src\main\java\com\quanlykho\controller\MainController.java
 F:\New folder\src\main\java\com\quanlykho\controller\NhapThuocController.java
+F:\New folder\src\main\java\com\quanlykho\database\CategoryDAO.java
+F:\New folder\src\main\java\com\quanlykho\database\DatabaseConnection.java
+F:\New folder\src\main\java\com\quanlykho\database\MedicineDAO.java
+F:\New folder\src\main\java\com\quanlykho\database\StockInDAO.java
+F:\New folder\src\main\java\com\quanlykho\database\StockOutDAO.java
+F:\New folder\src\main\java\com\quanlykho\database\SupplierDAO.java
 F:\New folder\src\main\java\com\quanlykho\model\Thuoc.java
+F:\New folder\src\main\java\com\quanlykho\util\DatabaseConnection.java

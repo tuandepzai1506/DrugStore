@@ -6,6 +6,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
 public class BanThuocController {
@@ -20,6 +22,10 @@ public class BanThuocController {
     private TextField txtGiaMax;
     @FXML
     private ComboBox<String> cbSapXepGia;
+    @FXML
+    private DatePicker dpHanSuDungFrom;
+    @FXML
+    private DatePicker dpHanSuDungTo;
     @FXML
     private Button btnTimKiem;
     @FXML
@@ -113,6 +119,10 @@ public class BanThuocController {
             return;
         }
         
+        LocalDate hanSuDungFrom = dpHanSuDungFrom.getValue();
+        LocalDate hanSuDungTo = dpHanSuDungTo.getValue();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        
         // Lọc dữ liệu
         final double finalGiaMin = giaMin;
         final double finalGiaMax = giaMax;
@@ -120,6 +130,7 @@ public class BanThuocController {
             .filter(t -> tenThuoc.isEmpty() || t.getTen().toLowerCase().contains(tenThuoc))
             .filter(t -> "Tất cả".equals(haCungCap) || t.getHaCungCap().equals(haCungCap))
             .filter(t -> t.getGia() >= finalGiaMin && t.getGia() <= finalGiaMax)
+            .filter(t -> kiemTraHanSuDung(t.getExpiryDate(), hanSuDungFrom, hanSuDungTo, formatter))
             .collect(Collectors.toCollection(FXCollections::observableArrayList));
         
         // Sắp xếp giá
@@ -132,12 +143,32 @@ public class BanThuocController {
         updateCbThuoc();
     }
 
+    private boolean kiemTraHanSuDung(String expiryDate, LocalDate dateFrom, LocalDate dateTo, DateTimeFormatter formatter) {
+        try {
+            LocalDate expDate = LocalDate.parse(expiryDate, formatter);
+            
+            if (dateFrom != null && expDate.isBefore(dateFrom)) {
+                return false;
+            }
+            
+            if (dateTo != null && expDate.isAfter(dateTo)) {
+                return false;
+            }
+            
+            return true;
+        } catch (Exception e) {
+            return true; // Nếu không thể parse, cho phép qua
+        }
+    }
+
     private void resetTimKiem() {
         txtTenThuoc.clear();
         cbHaCungCap.setValue("Tất cả");
         txtGiaMin.clear();
         txtGiaMax.clear();
         cbSapXepGia.setValue("Không sắp xếp");
+        dpHanSuDungFrom.setValue(null);
+        dpHanSuDungTo.setValue(null);
         
         danhSachThuocLoc = FXCollections.observableArrayList(danhSachThuocGoc);
         updateCbThuoc();
