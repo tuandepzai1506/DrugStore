@@ -6,11 +6,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseConnection {
-    private static final String HOST = "localhost";
+    // Thay đổi HOST thành địa chỉ IP của máy tính khác
+    // Ví dụ: "192.168.1.100" hoặc "192.168.0.5"
+    private static final String HOST = "localhost";  // THAY ĐỔI ĐÂY
     private static final int PORT = 3306;
     private static final String DATABASE = "quanlykho";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "";
+    private static final String USERNAME = "root";  // Tên user MySQL trên máy khác
+    private static final String PASSWORD = "";  // Mật khẩu MySQL
     
     private static Connection connection;
     

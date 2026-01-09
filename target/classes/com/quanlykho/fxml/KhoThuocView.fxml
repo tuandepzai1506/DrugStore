@@ -11,11 +11,26 @@
     <top>
         <VBox spacing="10">
             <Label text="DANH MỤC THUỐC TRONG KHO" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            
+            <!-- Hàng tìm kiếm -->
             <HBox spacing="10" alignment="CENTER_LEFT">
-                <TextField fx:id="txtSearch" promptText="Tìm kiếm thuốc..." prefWidth="300"/>
-                <Button text="Tìm kiếm" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                <TextField fx:id="txtSearch" promptText="Tìm kiếm thuốc..." prefWidth="250"/>
                 <Region HBox.hgrow="ALWAYS" />
                 <Button text="Xuất File Excel" style="-fx-background-color: #f39c12; -fx-text-fill: white;"/>
+            </HBox>
+            
+            <!-- Hàng lọc theo hãng -->
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-border-top: 1 solid #ddd; -fx-padding: 10 0 0 0; -fx-margin-top: 10;">
+                <Label text="Lọc dữ liệu:" style="-fx-font-weight: bold;"/>
+                
+                <Label text="Hãng:"/>
+                <ComboBox fx:id="cbHangThuoc" prefWidth="150"/>
+                
+                <Label text="Sắp xếp:"/>
+                <ComboBox fx:id="cbSapXepGia" prefWidth="150"/>
+                
+                <Button fx:id="btnLocDuLieu" text="Lọc" style="-fx-padding: 8px 20px; -fx-background-color: #27ae60; -fx-text-fill: white;"/>
+                <Button fx:id="btnResetBoDieuKien" text="Reset" style="-fx-padding: 8px 20px; -fx-background-color: #95a5a6; -fx-text-fill: white;"/>
             </HBox>
         </VBox>
     </top>
