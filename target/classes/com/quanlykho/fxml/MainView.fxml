@@ -35,10 +35,11 @@
                     onAction="#showExportView"/>
             <Button text="Tồn kho" maxWidth="Infinity"
                     onAction="#showInventoryView"/>
-            <Button text="Nhà cung cấp" maxWidth="Infinity"
-                    onAction="#showSupplierView"/>
-            <Button text="Nhân viên" maxWidth="Infinity"
-                    onAction="#showStaffView"/>
+            <Button text="Thống kê" maxWidth="Infinity"
+                    onAction="#showStatisticsView"/>
+            <Button text="Đăng xuất"
+        onAction="#handleLogout"
+        style="-fx-background-color: #e74c3c; -fx-text-fill: white"/>
 
             <Separator/>
 

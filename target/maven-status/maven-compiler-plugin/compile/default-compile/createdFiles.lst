@@ -1,4 +1,5 @@
 com\quanlykho\database\SupplierDAO$Supplier.class
+<<<<<<< HEAD
 com\quanlykho\controller\BaoCaoController.class
 com\quanlykho\database\CategoryDAO.class
 com\quanlykho\App.class
@@ -14,4 +15,23 @@ com\quanlykho\database\SupplierDAO.class
 com\quanlykho\controller\MainController.class
 com\quanlykho\controller\NhapThuocController.class
 com\quanlykho\util\DatabaseConnection.class
+=======
+com\quanlykho\controller\LoginController.class
+com\quanlykho\controller\BaoCaoController.class
+com\quanlykho\database\MedicineDAO.class
+com\quanlykho\database\StockOutDAO.class
+com\quanlykho\database\StockInDAO.class
+com\quanlykho\controller\NhapThuocController.class
+com\quanlykho\database\StatisticsDAO.class
+com\quanlykho\database\CategoryDAO.class
+com\quanlykho\App.class
+com\quanlykho\controller\KhoThuocController.class
+com\quanlykho\database\DatabaseConnection.class
+com\quanlykho\controller\BanThuocController.class
+com\quanlykho\database\StockInDAO$StockIn.class
+com\quanlykho\controller\StatisticsController.class
+com\quanlykho\database\StockOutDAO$StockOut.class
+com\quanlykho\database\SupplierDAO.class
+com\quanlykho\controller\MainController.class
+>>>>>>> b6f1cfb629baae19afae40737f37cc887044404c
 com\quanlykho\model\Thuoc.class

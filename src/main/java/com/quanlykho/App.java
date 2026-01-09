@@ -24,7 +24,7 @@ public class App extends Application {
         );
 
         Scene scene = new Scene(loader.load(), 900, 600);
-        stage.setTitle("Drug Store");
+        stage.setTitle("Hệ thống quản lý kho thuốc");
         stage.setScene(scene);
         stage.show();
     }

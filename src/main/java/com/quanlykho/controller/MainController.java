@@ -3,7 +3,9 @@ package com.quanlykho.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 
 public class MainController {
 
@@ -39,17 +41,26 @@ public class MainController {
         loadView("KhoThuocView.fxml");
     }
 
-    // Thêm hàm này để hết lỗi showSupplierView
     @FXML
     private void showSupplierView() {
-        System.out.println("➡ Mở giao diện Nhà cung cấp (Chưa có FXML)");
-        // loadView("SupplierView.fxml"); // Mở comment khi bạn đã tạo file này
+        // TODO: Implement supplier view
+        System.out.println("Nhà cung cấp - Chưa implement");
     }
 
-    // Thêm hàm này để khớp với nút "Nhân viên"
     @FXML
     private void showStaffView() {
-        System.out.println("➡ Mở giao diện Nhân viên");
+        // TODO: Implement staff view
+        System.out.println("Nhân viên - Chưa implement");
+    }
+
+    /**
+     * LOGIC: Hiển thị màn hình thống kê
+     * - Load StatisticsView.fxml
+     * - Controller tự động tải dữ liệu thống kê từ database
+     */
+    @FXML
+    private void showStatisticsView() {
+        loadView("StatisticsView.fxml");
     }
 
     // Thêm hàm thoát ứng dụng
@@ -57,4 +68,17 @@ public class MainController {
     private void exitApp() {
         System.exit(0);
     }
+    @FXML
+private void handleLogout() {
+    try {
+        Stage stage = (Stage) contentPane.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/com/quanlykho/fxml/LoginView.fxml"));
+        stage.setScene(new Scene(loader.load()));
+        stage.setTitle("Đăng nhập - Drug Store");
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
 }
