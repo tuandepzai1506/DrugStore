@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RunApp",
+            "request": "launch",
+            "mainClass": "com.quanlykho.RunApp",
+            "projectName": "DrugStore"
+        },
+        {
+            "type": "java",
             "name": "TestDatabaseConnection",
             "request": "launch",
             "mainClass": "com.quanlykho.TestDatabaseConnection",
