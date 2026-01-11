@@ -20,6 +20,8 @@
             <TextField fx:id="txtHanSuDung" promptText="Hạn sử dụng (dd/mm/yyyy)"/>
             <Button text="Lưu thông tin" onAction="#handleSave" maxWidth="Infinity"
                     style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="Hoàn thành nhập kho" onAction="#handleFinishImport" maxWidth="Infinity"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </VBox>
 
         <VBox HBox.hgrow="ALWAYS" spacing="10">
