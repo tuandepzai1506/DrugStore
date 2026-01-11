@@ -51,20 +51,10 @@ public class StatisticsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // LOGIC: Khởi tạo màn hình thống kê
-        // 1. Hiển thị ngày hiện tại
-        // 2. Tải dữ liệu thống kê từ database
-        // 3. Cập nhật tất cả Label với dữ liệu
         
         loadStatistics();
     }
 
-    /**
-     * LOGIC: Tải tất cả dữ liệu thống kê
-     * - Lấy dữ liệu từ StatisticsDAO
-     * - Format dữ liệu dễ đọc
-     * - Cập nhật Label
-     */
     private void loadStatistics() {
         try {
             // Hiển thị ngày hôm nay
